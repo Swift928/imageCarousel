@@ -1,0 +1,59 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.imageCarousel {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.arrowButton {
+    position: absolute;
+    top: 50%;
+    transition: translateY(-50%);
+    font-size: 3rem;
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.748);
+    z-index: 3;
+}
+
+ul {
+    list-style: none;
+}
+
+.rightArrowButton {
+    right: 1rem;
+}
+
+.leftArrowButton {
+    left: 1rem;
+}
+
+.slide[data-active] {
+    opacity: 1;
+    z-index: 2;
+
+    transition-delay: 0ms;
+}
+
+.slide {
+    opacity: 0;
+    inset: 0;
+    position: absolute;
+    transition: opacity 300ms ease-in-out;
+    transition-delay: 300ms;
+}
+
+.slide > img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
