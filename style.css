@@ -35,7 +35,7 @@ ul {
     left: 1rem;
 }
 
-.slide[data-active] {
+.slide[data-active='true'] {
     opacity: 1;
     z-index: 2;
 
@@ -44,8 +44,8 @@ ul {
 
 .slide {
     opacity: 0;
-    inset: 0;
     position: absolute;
+    inset: 0;
     transition: opacity 300ms ease-in-out;
     transition-delay: 300ms;
 }
@@ -56,4 +56,32 @@ ul {
     width: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+.displayDots {
+    display: flex;
+    gap: 0.5rem;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+svg {
+    fill: rgb(255, 0, 0);
+    border-radius: 50%;
+    height: 2rem;
+}
+
+circle {
+    fill: transparent;
+}
+
+svg[data-active='true'] circle {
+    fill: rgb(0, 255, 38);
+}
+
+.copy {
+    display: none;
 }
